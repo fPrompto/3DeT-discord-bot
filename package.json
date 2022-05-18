@@ -1,0 +1,19 @@
+{
+  "name": "3det-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fPrompto/3det-discord-bot.git"
+  },
+  "author": "Fernando Monteiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fPrompto/3det-discord-bot/issues"
+  },
+  "homepage": "https://github.com/fPrompto/3det-discord-bot#readme"
+}
