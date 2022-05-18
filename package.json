@@ -15,5 +15,21 @@
   "bugs": {
     "url": "https://github.com/fPrompto/3det-discord-bot/issues"
   },
-  "homepage": "https://github.com/fPrompto/3det-discord-bot#readme"
+  "homepage": "https://github.com/fPrompto/3det-discord-bot#readme",
+  "dependencies": {
+    "@types/node": "^17.0.34",
+    "discord.js": "^13.7.0",
+    "dotenv": "^16.0.1",
+    "inversify": "^6.0.1",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "ts-mockito": "^2.6.1",
+    "ts-node": "^10.7.0"
+  }
 }
