@@ -1,4 +1,5 @@
 import { Client, Message } from 'discord.js';
+import RunCommand from './services/commandService';
 
 class App {
   private client: Client;
@@ -15,6 +16,10 @@ class App {
       const commandBody = message.content.slice(this.prefix.length);
       const args = commandBody.split(' ');
       const command = args.shift().toLowerCase();
+
+      const service = new RunCommand();
+
+      service.run(command, args, message);
     });
 
     return this.client.login(this.token);
