@@ -7,6 +7,7 @@ import {
   detalhesDesvantagem,
   detalhesVantagem,
   pericias,
+  sobre,
 } from "../commands";
 
 class CommandService {
@@ -29,6 +30,10 @@ class CommandService {
 
     if (command === Command.PERICIAS) {
       return pericias(message);
+    }
+
+    if (command === Command.ABOUT) {
+      return sobre(message, args);
     }
   }
 }

@@ -3,6 +3,7 @@ import desvantagens from "./desvantagens";
 import detalhesDesvantagem from "./detalhesDesvantagem";
 import detalhesVantagem from "./detalhesVantagem";
 import pericias from "./pericias";
+import sobre from "./sobre";
 
 export {
   ping,
@@ -10,4 +11,5 @@ export {
   detalhesDesvantagem,
   detalhesVantagem,
   pericias,
+  sobre,
 };
