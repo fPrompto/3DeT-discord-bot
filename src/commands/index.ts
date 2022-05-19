@@ -4,6 +4,7 @@ import detalhesDesvantagem from "./detalhesDesvantagem";
 import detalhesVantagem from "./detalhesVantagem";
 import pericias from "./pericias";
 import sobre from "./sobre";
+import vantagens from "./vantagens";
 
 export {
   ping,
@@ -12,4 +13,5 @@ export {
   detalhesVantagem,
   pericias,
   sobre,
+  vantagens,
 };
