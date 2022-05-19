@@ -4,6 +4,7 @@ import Command from "../enums/commands";
 import {
   desvantagens,
   ping,
+  detalhesDesvantagem,
 } from "../commands";
 
 class CommandService {
@@ -14,6 +15,10 @@ class CommandService {
 
     if (command === Command.DESVANTAGENS) {
       return desvantagens(message);
+    }
+
+    if (command === Command.DESVANTAGEM) {
+      return detalhesDesvantagem(message, args);
     }
   }
 }

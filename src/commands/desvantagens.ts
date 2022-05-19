@@ -1,6 +1,6 @@
 import { Message } from 'discord.js';
 
-import desvantagensFile from '../data/desvantagens.json';
+import { desvantagens as desvantagensFile } from '../data';
 
 const desvantagens = async (message: Message) => {
   const desvantagensMap = desvantagensFile.desvantagens.map((data) => {
