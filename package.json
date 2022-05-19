@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.ts",
+    "start": "npm run clean:build && node src/index.js",
     "dev": "npx nodemon src/index.ts",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
+    "clean:build": "npm run clean && npm run build",
     "watch": "tsc -p tsconfig.json -w",
     "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\""
   },
