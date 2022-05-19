@@ -11,6 +11,14 @@ const client = new Client({
 
 const token = process.env.BOT_TOKEN;
 
-const server = new App(client, token);
 
-server.start();
+const startServer = () => {
+  if (!token) {
+    return console.log('token is required');
+  }
+  const server = new App(client, token);
+  server.start();
+};
+
+startServer();
+

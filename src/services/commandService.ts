@@ -12,7 +12,7 @@ import {
 } from "../commands";
 
 class CommandService {
-  public run(command: string, args: Array<string>, message: Message) {
+  public run(command: string | undefined, args: Array<string>, message: Message) {
     if (command === Command.PING) {
       return ping(message);
     }

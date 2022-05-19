@@ -1,5 +1,5 @@
 import { Client, Message } from 'discord.js';
-import RunCommand from './services/commandService';
+import commandService from './services/commandService';
 
 class App {
   private client: Client;
@@ -13,11 +13,12 @@ class App {
 
   public start(): Promise<string> {
     this.client.on('message', (message: Message) => {
-      const commandBody = message.content.slice(this.prefix.length);
-      const args = commandBody.split(' ');
-      const command = args.shift().toLowerCase();
+      const commandBody: string = message.content.slice(this.prefix.length);
+      const args: Array<string> = commandBody.split(' ');
 
-      const service = new RunCommand();
+      const command: string | undefined = args.shift()?.toLowerCase();
+
+      const service = new commandService();
 
       service.run(command, args, message);
     });
