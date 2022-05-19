@@ -6,6 +6,7 @@ import {
   ping,
   detalhesDesvantagem,
   detalhesVantagem,
+  pericias,
 } from "../commands";
 
 class CommandService {
@@ -24,6 +25,10 @@ class CommandService {
 
     if (command === Command.VANTAGEM) {
       return detalhesVantagem(message, args);
+    }
+
+    if (command === Command.PERICIAS) {
+      return pericias(message);
     }
   }
 }
