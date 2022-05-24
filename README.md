@@ -8,3 +8,4 @@ Link para adicionar o bot: https://discord.com/api/oauth2/authorize?client_id=93
 - !desvantagens - Lista todas as desvantagens
 - !desvantagem + Nome da desvantagem - Exibe os detalhes sobre uma desvantagem
 - !pericias - Lista todas as perícias
+- !1d20 - Jogar dado - Pode ser alterado como: 2d6, 10d6, 6d20...
