@@ -1,4 +1,4 @@
-enum Commands {
+enum Command {
   PING = 'ping',
   VANTAGENS = 'vantagens',
   VANTAGEM = 'vantagem',
@@ -9,4 +9,4 @@ enum Commands {
   DESVANTAGEM = 'desvantagem',
 }
 
-export default Commands;
+export default Command;

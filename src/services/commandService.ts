@@ -9,6 +9,7 @@ import {
   pericias,
   sobre,
   vantagens,
+  rollDice,
 } from "../commands";
 
 class CommandService {
@@ -39,6 +40,10 @@ class CommandService {
 
     if (command === Command.VANTAGENS) {
       return vantagens(message);
+    }
+
+    if (command?.match(/^\d/)) { // check if it starts with a number
+      return rollDice(message, command);
     }
   }
 }
