@@ -1,5 +1,7 @@
 import { Message } from 'discord.js';
 
+import Error from '../enums/errors';
+
 const randomNumber = (max: number) => {
   const randomN = Math.floor(Math.random() * max + 1);
 
@@ -15,11 +17,11 @@ const rollDice = (message: Message, command: string) => {
   let totalDice: Array<number> = [];
 
   if (diceQuantity > 100) {
-    return message.reply('Parece que você está tentando jogar muitos dados!');
+    return message.reply(Error.DICE_QUANTITY);
   }
 
   if (diceNumber > 100) {
-    return message.reply('Parece que este lado tem muitos lados!')
+    return message.reply(Error.DICE_NUMBER);
   }
 
   for (let i = 0; i < diceQuantity; i++) {

@@ -1,6 +1,8 @@
 import { Message } from 'discord.js';
 import { desvantagens as desvantagensFile } from "../data";
 
+import Error from '../enums/errors';
+
 const detalhesDesvantagem = async (message: Message, args: Array<string>) => {
   const filterArgs = args.join(' ');
 
@@ -15,7 +17,7 @@ const detalhesDesvantagem = async (message: Message, args: Array<string>) => {
   });
 
   if (!vFind) {
-    return message.reply('`Não foi possível localizar essa Vantagem!');
+    return message.reply(Error.DESVANTAGEM);
   }
 
   const messageToReply = `• ${vFind.name}(${vFind.cost})\n\n${vFind.description})`;
