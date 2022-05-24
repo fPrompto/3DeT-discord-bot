@@ -22,4 +22,4 @@ const startServer = () => {
 
 startServer();
 
-console.log('bot initialized');
+console.log('Bot initialized!');

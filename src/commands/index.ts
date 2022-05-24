@@ -5,6 +5,7 @@ import detalhesVantagem from "./detalhesVantagem";
 import pericias from "./pericias";
 import sobre from "./sobre";
 import vantagens from "./vantagens";
+import rollDice from "./rollDice";
 
 export {
   ping,
@@ -14,4 +15,5 @@ export {
   pericias,
   sobre,
   vantagens,
+  rollDice,
 };
