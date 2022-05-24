@@ -7,6 +7,7 @@ enum Command {
   PERICIAS = 'pericias',
   DESVANTAGENS = 'desvantagens',
   DESVANTAGEM = 'desvantagem',
+  COMMANDS = 'comandos',
 }
 
 export default Command;

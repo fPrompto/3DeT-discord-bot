@@ -10,6 +10,7 @@ import {
   sobre,
   vantagens,
   rollDice,
+  comandos,
 } from "../commands";
 
 class CommandService {
@@ -44,6 +45,10 @@ class CommandService {
 
     if (command?.match(/^\d/)) { // check if it starts with a number
       return rollDice(message, command);
+    }
+
+    if (command === Command.COMMANDS) {
+      return comandos(message);
     }
   }
 }
