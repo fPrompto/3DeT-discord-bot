@@ -20,7 +20,7 @@ class App {
 
       const service = new commandService();
 
-      service.run(command, args, message);
+      service.run(command, args, message, this.prefix);
     });
 
     return this.client.login(this.token);

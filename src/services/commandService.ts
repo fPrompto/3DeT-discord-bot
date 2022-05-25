@@ -14,7 +14,10 @@ import {
 } from "../commands";
 
 class CommandService {
-  public run(command: string | undefined, args: Array<string>, message: Message) {
+  public run(command: string | undefined, args: Array<string>, message: Message, prefix: string) {
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
+
     if (command === Command.PING) {
       return ping(message);
     }
