@@ -1,14 +1,13 @@
-import { Message } from 'discord.js';
+import Message from '../enums/messages';
+import IResponse from '../interfaces/response';
 
-import Messages from '../enums/messages';
-
-const randomNumber = (max: number) => {
+const randomNumber = (max: number): number => {
   const randomN = Math.floor(Math.random() * max + 1);
 
   return randomN;
 };
 
-const rollDice = (message: Message, command: string) => {
+const rollDice = (command: string): IResponse => {
   const diceValues = command.split('d');
   const diceQuantity: number = Number(diceValues[0]);
   const diceNumber: number = Number(diceValues[1]);
@@ -17,11 +16,11 @@ const rollDice = (message: Message, command: string) => {
   let totalDice: Array<number> = [];
 
   if (diceQuantity > 100) {
-    return message.reply(Messages.DICE_QUANTITY_ERROR);
+    return { message: Message.DICE_QUANTITY_ERROR };
   }
 
   if (diceNumber > 100) {
-    return message.reply(Messages.DICE_NUMBER_ERROR);
+    return { message: Message.DICE_NUMBER_ERROR };
   }
 
   for (let i = 0; i < diceQuantity; i++) {
@@ -31,11 +30,12 @@ const rollDice = (message: Message, command: string) => {
     total.push(`• ${i + 1}: d${diceNumber} => ${value}`);
   }
 
-  const totalValue = totalDice.reduce((acc: number, current: number) => {
-    return acc + current;
-  });
+  const totalValue = totalDice
+    .reduce((acc: number, current: number): number => {
+      return acc + current;
+    });
 
-  message.reply(`${total.join('\n')}\n\nTotal: ${totalValue}`);
+  return { message: `${total.join('\n')}\n\nTotal: ${totalValue}` };
 };
 
 export default rollDice;

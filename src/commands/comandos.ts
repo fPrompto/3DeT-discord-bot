@@ -1,15 +1,14 @@
-import { Message } from 'discord.js';
-
 import { commands } from '../data';
+import IResponse from '../interfaces/response';
 
-const comandos = (message: Message) => {
+const comandos = (): IResponse => {
   const commandsMap = commands.map((data) => {
     const { command, description } = data;
 
     return `• ${command} - ${description}`;
   });
 
-  message.reply(`Lista de comandos:\n\n${commandsMap.join('\n')}`);
+  return { message: `Lista de comandos:\n\n${commandsMap.join('\n')}` };
 };
 
 export default comandos;
