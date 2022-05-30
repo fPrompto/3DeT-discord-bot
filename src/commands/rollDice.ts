@@ -36,7 +36,7 @@ const rollDice = (command: string): IResponse => {
     });
 
   // return { message: `${total.join('\n')}\n\nTotal: ${totalValue}` };
-  return { message: `\`${totalValue}\` ⟵ [${total} ] ${command}` }
+  return { message: `\` ${totalValue} \` ⟵ [${total} ] ${command}` }
 };
 
 export default rollDice;
