@@ -27,7 +27,7 @@ const rollDice = (command: string): IResponse => {
     const value = randomNumber(Number(diceNumber));
 
     totalDice.push(value);
-    total.push(`• ${i + 1}: d${diceNumber} => ${value}`);
+    total.push(` ${value}`);
   }
 
   const totalValue = totalDice
@@ -35,7 +35,8 @@ const rollDice = (command: string): IResponse => {
       return acc + current;
     });
 
-  return { message: `${total.join('\n')}\n\nTotal: ${totalValue}` };
+  // return { message: `${total.join('\n')}\n\nTotal: ${totalValue}` };
+  return { message: `\`${totalValue}\` ⟵ [${total} ] ${command}` }
 };
 
 export default rollDice;

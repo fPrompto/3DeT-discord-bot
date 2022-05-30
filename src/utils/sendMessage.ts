@@ -6,7 +6,7 @@ const sendMessage = (message: Message, str: string) => {
   if (str.length > CHAR_LIMIT) {
     for (let i = 0; i < str.length; i += CHAR_LIMIT) {
       const newStr = str.slice(i, i + CHAR_LIMIT);
-  
+
       message.reply(newStr);
     }
 
