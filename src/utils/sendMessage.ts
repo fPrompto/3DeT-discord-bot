@@ -1,13 +1,18 @@
 import { Message } from 'discord.js';
 
 const sendMessage = (message: Message, str: string) => {
-  if (str.length > 2000) {
-    const str1 = str.slice(1, 2000);
-    const str2 = str.slice(2000);
-    message.reply(str1);
-    message.reply(str2);
+  const CHAR_LIMIT: number = 2000;
+
+  if (str.length > CHAR_LIMIT) {
+    for (let i = 0; i < str.length; i += CHAR_LIMIT) {
+      const newStr = str.slice(i, i + CHAR_LIMIT);
+  
+      message.reply(newStr);
+    }
+
     return;
   }
+
   return message.reply(str);
 };
 
