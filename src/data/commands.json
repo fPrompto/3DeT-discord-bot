@@ -11,7 +11,7 @@
   },
   {
     "id": "3",
-    "command": "desvnatagens",
+    "command": "desvantagens",
     "description": "Lista todas as vantagens"
   },
   {
@@ -26,11 +26,16 @@
   },
   {
     "id": "6",
+    "command": "pericia + <Nome da Perícia>",
+    "description": "Exibe os detalhes sobre uma perícia específica"
+  },
+  {
+    "id": "7",
     "command": "sobre + <Nome>",
     "description": "Pode ser usado com \"vantagem\", \"desvantagem\", \"pericia\" para exibir uma explicação sobre cada coisa"
   },
   {
-    "id": "7",
+    "id": "8",
     "command": "2d20, 10d6, 2d4, 2d3, 2d2, ...",
     "description": "Rola um dado sendo o primeiro número a quantidade de dados e o segundo a quantidade de lados"
   }

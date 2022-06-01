@@ -7,6 +7,7 @@ import sobre from "./sobre";
 import vantagens from "./vantagens";
 import rollDice from "./rollDice";
 import comandos from "./comandos";
+import detalhesPericia from "./detalhesPericia";
 
 export {
   ping,
@@ -18,4 +19,5 @@ export {
   vantagens,
   rollDice,
   comandos,
+  detalhesPericia,
 };

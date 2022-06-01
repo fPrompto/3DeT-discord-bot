@@ -11,6 +11,7 @@ import {
   vantagens,
   rollDice,
   comandos,
+  detalhesPericia,
 } from "../commands";
 
 import sendMessage from '../utils/sendMessage';
@@ -62,6 +63,11 @@ class CommandService {
 
     if (command === Command.COMMANDS) {
       const res = await comandos();
+      return sendMessage(message, res.message);
+    }
+
+    if (command === Command.PERICIA) {
+      const res = await detalhesPericia(args);
       return sendMessage(message, res.message);
     }
   }

@@ -1,14 +1,14 @@
 import { readFile } from '../utils/readWriteFile';
-import normalizeString from '../utils/normalizeString';
 import Message from '../enums/messages';
+import normalizeString from '../utils/normalizeString';
 import IResponse from "../interfaces/response";
 
-const detalhesDesvantagem = async (args: Array<string>): Promise<IResponse> => {
-  const desvantagensFile = await readFile('src/data/desvantagens.json');
+const detalhesPericia = async (args: Array<string>): Promise<IResponse> => {
+  const pericias = await readFile('src/data/pericias.json');
 
   const filterArgs = args.join(' ');
 
-  const vFind = desvantagensFile.desvantagens.find((v: any) => {
+  const vFind = pericias.listaDePericias.find((v: any) => {
     const vName = normalizeString(v.name);
     const vArgs = normalizeString(filterArgs);
 
@@ -16,11 +16,11 @@ const detalhesDesvantagem = async (args: Array<string>): Promise<IResponse> => {
   });
 
   if (!vFind) {
-    return { message: Message.DESVANTAGEM_ERROR };
+    return { message: Message.PERICIA_ERROR };
   }
   const messageToReply = `• ${vFind.name}(${vFind.cost})\n\n${vFind.description})`;
 
   return { message: messageToReply };
 };
 
-export default detalhesDesvantagem;
+export default detalhesPericia;

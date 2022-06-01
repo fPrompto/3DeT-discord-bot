@@ -5,6 +5,7 @@ enum Command {
   SOMAR = 'somar',
   ABOUT = 'sobre',
   PERICIAS = 'pericias',
+  PERICIA = 'pericia',
   DESVANTAGENS = 'desvantagens',
   DESVANTAGEM = 'desvantagem',
   COMMANDS = 'comandos',
