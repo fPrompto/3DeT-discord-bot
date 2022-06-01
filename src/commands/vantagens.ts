@@ -1,8 +1,10 @@
-import { vantagens as vantagensFile } from '../data';
+import { readFile } from '../utils/readWriteFile';
 import IResponse from '../interfaces/response';
 
-const vantagens = (): IResponse => {
-  const vantagensMap = vantagensFile.vantagens.map((data) => {
+const vantagens = async (): Promise<IResponse> => {
+  const vantagensFile = await readFile('src/data/vantagens.json');
+
+  const vantagensMap = vantagensFile.vantagens.map((data: any) => {
     const { name, cost } = data;
 
     return `• ${name}(${cost})`;

@@ -1,12 +1,14 @@
-import { desvantagens as desvantagensFile } from "../data";
+import { readFile } from '../utils/readWriteFile';
 import normalizeString from '../utils/normalizeString';
 import Message from '../enums/messages';
 import IResponse from "../interfaces/response";
 
-const detalhesDesvantagem = (args: Array<string>): IResponse => {
+const detalhesDesvantagem = async (args: Array<string>): Promise<IResponse> => {
+  const desvantagensFile = await readFile('src/data/desvantagens.json');
+
   const filterArgs = args.join(' ');
 
-  const vFind = desvantagensFile.desvantagens.find((v) => {
+  const vFind = desvantagensFile.desvantagens.find((v: any) => {
     const vName = normalizeString(v.name);
     const vArgs = normalizeString(filterArgs);
 

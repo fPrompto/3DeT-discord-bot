@@ -16,7 +16,7 @@ import {
 import sendMessage from '../utils/sendMessage';
 
 class CommandService {
-  public run(command: string | undefined, args: Array<string>, message: Message, prefix: string) {
+  public async run(command: string | undefined, args: Array<string>, message: Message, prefix: string) {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
 
@@ -26,32 +26,32 @@ class CommandService {
     }
 
     if (command === Command.DESVANTAGENS) {
-      const res = desvantagens();
+      const res = await desvantagens();
       return sendMessage(message, res.message);
     }
 
     if (command === Command.DESVANTAGEM) {
-      const res = detalhesDesvantagem(args);
+      const res = await detalhesDesvantagem(args);
       return sendMessage(message, res.message);
     }
 
     if (command === Command.VANTAGEM) {
-      const res = detalhesVantagem(args);
+      const res = await detalhesVantagem(args);
       return sendMessage(message, res.message);
     }
 
     if (command === Command.PERICIAS) {
-      const res = pericias();
+      const res = await pericias();
       return sendMessage(message, res.message);
     }
 
     if (command === Command.ABOUT) {
-      const res = sobre(args);
+      const res = await sobre(args);
       return sendMessage(message, res.message);
     }
 
     if (command === Command.VANTAGENS) {
-      const res = vantagens();
+      const res = await vantagens();
       return sendMessage(message, res.message);
     }
 
@@ -61,7 +61,7 @@ class CommandService {
     }
 
     if (command === Command.COMMANDS) {
-      const res = comandos();
+      const res = await comandos();
       return sendMessage(message, res.message);
     }
   }

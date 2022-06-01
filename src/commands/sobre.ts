@@ -1,36 +1,44 @@
-import {
-  vantagens as vantagensFile,
-  vantagensUnicas as vantagensUnicasFile,
-  pericias as periciasFile,
-} from '../data';
+import { readFile } from '../utils/readWriteFile';
 import IResponse from '../interfaces/response';
 
-const vantagens = (): string => {
-  const { name, about } = vantagensFile;
+const vantagensFile = async (): Promise<any> => {
+  return await readFile('src/data/vantagens.json');
+};
+
+const vantagensUnicasFile = async (): Promise<any> => {
+  return await readFile('src/data/vantagensUnicas.json');
+};
+
+const periciasFile = async (): Promise<any> => {
+  return await readFile('src/data/pericias.json');
+};
+
+const vantagens = async (): Promise<string> => {
+  const { name, about } = await vantagensFile();
   return `• ${name}\n\n${about}`;
 };
 
-const pericias = (): string => {
-  const { name, about } = vantagensUnicasFile;
+const pericias = async (): Promise<string> => {
+  const { name, about } = await vantagensUnicasFile();
   return `• ${name}\n\n${about}`;
 };
 
-const vantagensUnicas = (): string => {
-  const { name, about } = periciasFile;
+const vantagensUnicas = async (): Promise<string> => {
+  const { name, about } = await periciasFile();
   return `• ${name}\n\n${about}`;
 };
 
-const sobre = (args: Array<string>): IResponse => {
+const sobre = async (args: Array<string>): Promise<IResponse> => {
   if (args.join(' ') === 'vantagens unicas') {
-    return { message: vantagensUnicas() };
+    return { message: await vantagensUnicas() };
   }
 
   if (args[0] === 'vantagens' || args[0] === 'vantagem') {
-    return { message: vantagens() };
+    return { message: await vantagens() };
   }
 
   if (args[0] === 'pericias' || args[0] === 'pericia') {
-    return { message: pericias() };
+    return { message: await pericias() };
   }
 
   return { message: `No foi possvel localizar` };

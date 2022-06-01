@@ -1,8 +1,10 @@
-import { pericias as periciasFile } from "../data";
+import { readFile } from '../utils/readWriteFile';
 import IResponse from '../interfaces/response';
 
-const pericias = (): IResponse => {
-  const periciasMap = periciasFile.listaDePericias.map((data) => {
+const pericias = async (): Promise<IResponse> => {
+  const periciasFile = await readFile('src/data/pericias.json');
+
+  const periciasMap = periciasFile.listaDePericias.map((data: any) => {
     return `• ${data.name}`
   });
   const a = 'Digite !pericia + (nome da pericia) para'

@@ -1,12 +1,14 @@
-import { vantagens } from "../data";
+import { readFile } from '../utils/readWriteFile';
 import Message from '../enums/messages';
 import normalizeString from '../utils/normalizeString';
 import IResponse from "../interfaces/response";
 
-const detalhesVantagem = (args: Array<string>): IResponse => {
+const detalhesVantagem = async (args: Array<string>): Promise<IResponse> => {
+  const vantagens = await readFile('src/data/vantagens.json');
+
   const filterArgs = args.join(' ');
 
-  const vFind = vantagens.vantagens.find((v) => {
+  const vFind = vantagens.vantagens.find((v: any) => {
     const vName = normalizeString(v.name);
     const vArgs = normalizeString(filterArgs);
 
