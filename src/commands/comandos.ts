@@ -1,8 +1,9 @@
 import { readFile } from '../utils/readWriteFile';
 import IResponse from '../interfaces/response';
+import FilePath from '../enums/filesPath';
 
 const comandos = async (): Promise<IResponse> => {
-  const commands = await readFile('src/data/commands.json');
+  const commands = await readFile(FilePath.COMMANDS);
 
   const commandsMap = commands.map((data: any) => {
     const { command, description } = data;

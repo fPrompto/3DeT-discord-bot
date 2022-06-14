@@ -2,9 +2,10 @@ import { readFile } from '../utils/readWriteFile';
 import Message from '../enums/messages';
 import normalizeString from '../utils/normalizeString';
 import IResponse from "../interfaces/response";
+import FilePath from '../enums/filesPath';
 
 const detalhesVantagem = async (args: Array<string>): Promise<IResponse> => {
-  const vantagens = await readFile('src/data/vantagens.json');
+  const vantagens = await readFile(FilePath.VANTAGENS);
 
   const filterArgs = args.join(' ');
 

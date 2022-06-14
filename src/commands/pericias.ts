@@ -1,8 +1,9 @@
 import { readFile } from '../utils/readWriteFile';
 import IResponse from '../interfaces/response';
+import FilePath from '../enums/filesPath';
 
 const pericias = async (): Promise<IResponse> => {
-  const periciasFile = await readFile('src/data/pericias.json');
+  const periciasFile = await readFile(FilePath.PERICIAS);
 
   const periciasMap = periciasFile.listaDePericias.map((data: any) => {
     return `• ${data.name}`

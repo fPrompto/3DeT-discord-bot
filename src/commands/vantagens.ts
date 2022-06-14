@@ -1,8 +1,9 @@
 import { readFile } from '../utils/readWriteFile';
 import IResponse from '../interfaces/response';
+import FilePath from '../enums/filesPath';
 
 const vantagens = async (): Promise<IResponse> => {
-  const vantagensFile = await readFile('src/data/vantagens.json');
+  const vantagensFile = await readFile(FilePath.VANTAGENS);
 
   const vantagensMap = vantagensFile.vantagens.map((data: any) => {
     const { name, cost } = data;

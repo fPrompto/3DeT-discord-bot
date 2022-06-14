@@ -7,8 +7,9 @@ const readFile = async (filePath: string): Promise<any> => {
   return content;
 };
 
-const writeFile = async (filePath: string, content: string): Promise<void> => {
-  const wFile = await fs.promises.writeFile(filePath, content, 'utf8');
+const writeFile = async (filePath: string, content: any): Promise<void> => {
+  const wFile = await fs.promises
+    .writeFile(filePath, JSON.stringify(content), 'utf8');
 
   return wFile;
 };

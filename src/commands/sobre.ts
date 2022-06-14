@@ -1,16 +1,17 @@
 import { readFile } from '../utils/readWriteFile';
 import IResponse from '../interfaces/response';
+import FilePath from '../enums/filesPath';
 
 const vantagensFile = async (): Promise<any> => {
-  return await readFile('src/data/vantagens.json');
+  return await readFile(FilePath.VANTAGENS);
 };
 
 const vantagensUnicasFile = async (): Promise<any> => {
-  return await readFile('src/data/vantagensUnicas.json');
+  return await readFile(FilePath.VANTAGENS_UNICAS);
 };
 
 const periciasFile = async (): Promise<any> => {
-  return await readFile('src/data/pericias.json');
+  return await readFile(FilePath.PERICIAS);
 };
 
 const vantagens = async (): Promise<string> => {
@@ -41,7 +42,7 @@ const sobre = async (args: Array<string>): Promise<IResponse> => {
     return { message: await pericias() };
   }
 
-  return { message: `No foi possvel localizar` };
+  return { message: `Não foi possvel localizar` };
 };
 
 export default sobre;
