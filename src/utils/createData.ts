@@ -151,10 +151,19 @@ const desvantagens: IDesvantagem = {
   ],
 };
 
-// const createDesvantagens = async () => {
-//   const newDesvantagens = await desvantagens
-//     .forEach((data: any) => data.desvantagens.id = data.desvantagens.id.toString());
-//   await writeFile(FilePath.DESVANTAGENS, newDesvantagens);
-// };
+const createDesvantagens = async () => {
+  const list = await desvantagens.desvantagens
+    .map((data: any) => (
+      {
+        id: data.id.toString(),
+        name: data.name,
+        cost: data.cost,
+        description: data.description,
+      }
+    ));
+  const newDesvantagens = {
+    desvantagens: list,
+  }
+  await writeFile(FilePath.DESVANTAGENS, newDesvantagens);
+};
 
-// createDesvantagens();
